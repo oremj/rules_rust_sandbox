@@ -1,0 +1,10 @@
+
+load("@crates_sandbox//:defs.bzl", "all_crate_deps")
+load("@rules_rust//rust:defs.bzl", "rust_binary", "rust_library", "rust_test")
+
+rust_binary(
+    name = "duplicate_condition",
+    srcs = ["src/main.rs"],
+    crate_name = "duplicate_condition",
+    deps = all_crate_deps(normal=True),
+)
